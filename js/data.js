@@ -2,10 +2,10 @@
 // Product data and utility methods for PINSTREND website
 
 const pintrendData = {
-  // Cart (load from localStorage if available)
+  // Cart: loaded from localStorage if available
   cart: JSON.parse(localStorage.getItem("cart")) || [],
 
-  // Product List
+  // Product List (you can expand this)
   products: [
     {
       id: "collapsible-electric-kettle",
@@ -58,12 +58,11 @@ const pintrendData = {
     return this.products.find(p => p.id === productId);
   },
 
-  // Method: Search products by name or category
+  // Method: Search products
   searchProducts(term) {
-    const lower = term.toLowerCase();
     return this.products.filter(product =>
-      product.name.toLowerCase().includes(lower) ||
-      product.category.toLowerCase().includes(lower)
+      product.name.toLowerCase().includes(term.toLowerCase()) ||
+      product.category.toLowerCase().includes(term.toLowerCase())
     );
   },
 
@@ -85,7 +84,6 @@ const pintrendData = {
           quantity: 1
         });
       }
-
       product.stock -= 1;
       localStorage.setItem("cart", JSON.stringify(this.cart));
     } else {
