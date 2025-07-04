@@ -7,7 +7,572 @@ const pintrendData = {
 
   // Product List (you can expand this)
   products: [
+  {
+    id: "product-soap-dispenser",
+    name: "Automatic Soap Dispenser",
+    priceINR: 1388,
+    priceUSD: 17,
+    link: "https://amzn.to/46sLIRc"
+  },
+  {
+    id: "fridge-organizer-bins",
+    name: "Fridge Organizer Bins (Clear, Stackable)",
+    priceINR: 2395,
+    priceUSD: 27.97,
+    link: "https://amzn.to/3I98vaY"
+  },
+  {
+    id: "smart-trash-can",
+    name: "Smart Trash Can with Motion Sensor",
+    priceINR: 2999,
+    priceUSD: 35.03,
+    link: "https://amzn.to/4euARZe"
+  },
+  {
+    id: "electric-jar-opener",
+    name: "Electric Jar Opener",
+    priceINR: 1571,
+    priceUSD: 18.35,
+    link: "https://amzn.to/44sVwbo"
+  },
+  {
+    id: "automatic-oil-dispenser",
+    name: "Automatic Oil Dispenser Bottle (with sensor)",
+    priceINR: 304,
+    priceUSD: 3.55,
+    link: "https://amzn.to/3In9G6p"
+  },
+  {
+    id: "roll-up-drying-rack",
+    name: "Roll-Up Over-Sink Drying Rack",
+    priceINR: 649,
+    priceUSD: 7.58,
+    link: "https://amzn.to/3GpXMIo"
+  },
+  {
+    id: "microwave-cleaner",
+    name: "Microwave Cleaner Steamer (Angry Mama Style)",
+    priceINR: 399,
+    priceUSD: 4.66,
+    link: "https://amzn.to/4nuE7rE"
+  },
+  {
+    id: "mini-ice-tray",
+    name: "Mini Ice Cube Tray with Lid & Scoop",
+    priceINR: 745,
+    priceUSD: 8.70,
+    link: "https://amzn.to/4klNqY9"
+  },
+  {
+    id: "cutting-board-drain",
+    name: "2-in-1 Cutting Board with Drain Tray",
+    priceINR: 3397,
+    priceUSD: 39.68,
+    link: "https://amzn.to/4lbuc8R"
+  },
+  {
+    id: "automatic-pan-stirrer",
+    name: "Automatic Pan Stirrer with Timer",
+    priceINR: 1299,
+    priceUSD: 15.17,
+    link: "https://amzn.to/44rdDOR"
+  },
+  {
+    id: "grain-dispenser",
+    name: "Wall-Mounted Rice & Grain Dispenser",
+    priceINR: 2299,
+    priceUSD: 26.85,
+    link: "https://amzn.to/4lBVDsk"
+  },
+  {
+    id: "milk-frother",
+    name: "Electric Milk Frother Wand",
+    priceINR: 1299,
+    priceUSD: 15.17,
+    link: "https://amzn.to/4eycpWQ"
+  },
+  {
+    id: "digital-measuring-spoon",
+    name: "Digital Measuring Spoon",
+    priceINR: 999,
+    priceUSD: 11.67,
+    link: "https://amzn.to/45LPtkF"
+  },
+  {
+    id: "silicone-food-covers",
+    name: "Silicone Food Covers (Stretch Lids)",
+    priceINR: 228,
+    priceUSD: 2.66,
+    link: "https://amzn.to/4ljDu2o"
+  },
+  {
+    id: "magnetic-measuring-spoons",
+    name: "Magnetic Measuring Spoons Set",
+    priceINR: 3960,
+    priceUSD: 46.25,
+    link: "https://amzn.to/4lx0DOF"
+  },
+  {
+    id: "electric-garlic-chopper",
+    name: "Mini Electric Garlic Chopper",
+    priceINR: 1199,
+    priceUSD: 14.00,
+    link: "https://amzn.to/4lTqxwv"
+  },
+  {
+    id: "under-shelf-basket",
+    name: "Cupboard/Under-Shelf Basket Organizer",
+    priceINR: 527,
+    priceUSD: 6.15,
+    link: "https://amzn.to/400tdQd"
+  },
+  {
+    id: "airfryer-liners",
+    name: "Silicone Air Fryer Liners (Reusable)",
+    priceINR: 579,
+    priceUSD: 6.76,
+    link: "https://amzn.to/4km5dOF"
+  },
+  {
+    id: "inkbird-thermometer",
+    name: "INKBIRD Bluetooth Meat Thermometer",
+    priceINR: 2090,
+    priceUSD: 25.18,
+    link: "https://amzn.to/3TjlTvu"
+  },
+  {
+    id: "bbq-grill-gloves",
+    name: "BBQGO BBQ Grill Gloves",
+    priceINR: 1292,
+    priceUSD: 15.57,
+    link: "https://amzn.to/3ZTGlXp"
+  },
+  {
+    id: "breakfast-sandwich-maker",
+    name: "Electric Breakfast Sandwich Maker",
+    priceINR: 5699,
+    priceUSD: 68.66,
+    link: "https://amzn.to/3TRB1Ae"
+  },
+  {
+    id: "mini-food-chopper",
+    name: "Mini Food Chopper",
+    priceINR: 3700,
+    priceUSD: 44.58,
+    link: "https://amzn.to/3ZXneM8"
+  },
+  {
+    id: "smart-measuring-spoon",
+    name: "Smart Measuring Spoon/Scale",
+    priceINR: 1199,
+    priceUSD: 14.45,
+    link: "https://amzn.to/4l6Z1eD"
+  },
+  {
+    id: "automatic-stirring-pot",
+    name: "Automatic Stirring Pot Tool",
+    priceINR: 13476,
+    priceUSD: 162.36,
+    link: "https://amzn.to/4kljH1o"
+  },
+  {
+    id: "magnetic-spice-rack",
+    name: "Magnetic Spice Rack Organizer",
+    priceINR: 2299,
+    priceUSD: 27.70,
+    link: "https://amzn.to/40xGaBh"
+  },
+  {
+    id: "vegetable-slicer",
+    name: "Multi-Function Vegetable Slicer",
+    priceINR: 3499,
+    priceUSD: 42.16,
+    link: "https://amzn.to/40y9ebL"
+  },
+  {
+    id: "under-cabinet-lighting",
+    name: "Under Cabinet Lighting (Rechargeable)",
+    priceINR: 699,
+    priceUSD: 8.42,
+    link: "https://amzn.to/3I92T05"
+  },
+  {
+    id: "silicone-zipper-bags",
+    name: "Reusable Silicone Zip Bags",
+    priceINR: 700,
+    priceUSD: 8.43,
+    link: "https://amzn.to/4keOzR1"
+  },
+  {
+    id: "tap-water-filter",
+    name: "Smart Tap Water Filter Dispenser",
+    priceINR: 299,
+    priceUSD: 3.60,
+    link: "https://amzn.to/4etDQBd"
+  },
+  {
+    id: "breakfast-maker",
+    name: "3-in-1 Breakfast Maker",
+    priceINR: 8000,
+    priceUSD: 95.99,
+    link: "https://amzn.to/45K1VkQ"
+  },
+  {
+    id: "prestige-multi-cooker",
+    name: "Prestige Multi-Cooker 1.5L",
+    priceINR: 2500,
+    priceUSD: 29.99,
+    link: "https://amzn.to/4kll3ZT"
+  },
+  {
+    id: "atomberg-mixer",
+    name: "Atomberg Zenova Mixer Grinder",
+    priceINR: 7000,
+    priceUSD: 84.99,
+    link: "https://amzn.to/4ex7lCf"
+  },
+  {
+    id: "philips-air-fryer",
+    name: "Philips Air Fryer",
+    priceINR: 10000,
+    priceUSD: 120.00,
+    link: "https://amzn.to/4kgzH4R"
+  },
+  {
+    id: "sliding-tray",
+    name: "Sliding Tray",
+    priceINR: 1000,
+    priceUSD: 11.99,
+    link: "https://amzn.to/3SS1XQ4"
+  },
+  {
+    id: "vacuum-sealer",
+    name: "Vacuum Sealer",
+    priceINR: 3000,
+    priceUSD: 35.99,
+    link: "https://amzn.to/3SVcs54"
+  },
+  {
+    id: "mini-sealing-machine",
+    name: "Mini Sealing Machine",
+    priceINR: 500,
+    priceUSD: 3.59,
+    link: "https://amzn.to/4k1PTqE"
+  },
+  {
+    id: "kitchen-mat",
+    name: "Kitchen Mat",
+    priceINR: 700,
+    priceUSD: 8.39,
+    link: "https://amzn.to/3HG0ry2"
+  },
+  {
+    id: "knife-sharpener",
+    name: "Knife Sharpener",
+    priceINR: 250,
+    priceUSD: 2.99,
+    link: "https://amzn.to/45TExRW"
+  },
+  {
+    id: "product-soap-dispenser",
+    name: "Automatic Soap Dispenser",
+    priceINR: 1388,
+    priceUSD: 17,
+    link: "https://amzn.to/46sLIRc"
+  },
+  {
+    id: "product-fridge-shelf",
+    name: "Magnetic Fridge Shelf Rack",
+    priceINR: 1199,
+    priceUSD: 14,
+    link: "https://amzn.to/44rEZEO"
+  },
+  {
+    id: "product-fridge-bins",
+    name: "Fridge Organizer Bins (Clear, Stackable)",
+    priceINR: 2395,
+    priceUSD: 29,
+    link: "https://amzn.to/3I98vaY"
+  },
+  {
+    id: "product-smart-trashcan",
+    name: "Smart Trash Can with Motion Sensor",
+    priceINR: 2999,
+    priceUSD: 36,
+    link: "https://amzn.to/4euARZe"
+  },
+  {
+    id: "product-electric-jar-opener",
+    name: "Electric Jar Opener",
+    priceINR: 1571,
+    priceUSD: 19,
+    link: "https://amzn.to/44sVwbo"
+  },
+  {
+    id: "product-oil-dispenser",
+    name: "Automatic Oil Dispenser Bottle (with sensor)",
+    priceINR: 304,
+    priceUSD: 4,
+    link: "https://amzn.to/3In9G6p"
+  },
+  {
+    id: "product-drying-rack",
+    name: "Roll-Up Over-Sink Drying Rack",
+    priceINR: 649,
+    priceUSD: 8,
+    link: "https://amzn.to/3GpXMIo"
+  },
+  {
+    id: "product-microwave-cleaner",
+    name: "Microwave Cleaner Steamer (Angry Mama Style)",
+    priceINR: 399,
+    priceUSD: 5,
+    link: "https://amzn.to/4nuE7rE"
+  },
+  {
+    id: "product-ice-tray",
+    name: "Mini Ice Cube Tray with Lid & Scoop",
+    priceINR: 745,
+    priceUSD: 9,
+    link: "https://amzn.to/4klNqY9"
+  },
+  {
+    id: "product-steam-cleaner",
+    name: "NexLev Steam Cleaner",
+    priceINR: 0,
+    priceUSD: 0,
+    link: "https://amzn.to/44bqypt"
+  },
+  {
+    id: "product-cutting-board",
+    name: "2-in-1 Cutting Board with Drain Tray",
+    priceINR: 3397,
+    priceUSD: 41,
+    link: "https://amzn.to/4lbuc8R"
+  },
+  {
+    id: "product-pan-stirrer",
+    name: "Automatic Pan Stirrer with Timer",
+    priceINR: 1299,
+    priceUSD: 16,
+    link: "https://amzn.to/44rdDOR"
+  },
+  {
+    id: "product-grain-dispenser",
+    name: "Wall-Mounted Rice & Grain Dispenser",
+    priceINR: 2299,
+    priceUSD: 28,
+    link: "https://amzn.to/4lBVDsk"
+  },
+  {
+    id: "product-milk-frother",
+    name: "Electric Milk Frother Wand",
+    priceINR: 1299,
+    priceUSD: 16,
+    link: "https://amzn.to/4eycpWQ"
+  },
+  {
+    id: "product-digital-spoon",
+    name: "Digital Measuring Spoon",
+    priceINR: 999,
+    priceUSD: 12,
+    link: "https://amzn.to/45LPtkF"
+  },
+  {
+    id: "product-silicone-lids",
+    name: "Silicone Food Covers (Stretch Lids)",
+    priceINR: 228,
+    priceUSD: 3,
+    link: "https://amzn.to/4ljDu2o"
+  },
+  {
+    id: "product-measuring-spoons",
+    name: "Magnetic Measuring Spoons Set",
+    priceINR: 3960,
+    priceUSD: 48,
+    link: "https://amzn.to/4lx0DOF"
+  },
+  {
+    id: "product-garlic-chopper",
+    name: "Mini Electric Garlic Chopper",
+    priceINR: 1199,
+    priceUSD: 14,
+    link: "https://amzn.to/4lTqxwv"
+  },
+  {
+    id: "product-shelf-organizer",
+    name: "Cupboard/Under-Shelf Basket Organizer",
+    priceINR: 527,
+    priceUSD: 6,
+    link: "https://amzn.to/400tdQd"
+  },
+  {
+    id: "product-airfryer-liners",
+    name: "Silicone Air Fryer Liners (Reusable)",
+    priceINR: 579,
+    priceUSD: 7,
+    link: "https://amzn.to/4km5dOF"
+  }
+{
+      id: "inkbird-thermometer",
+      name: "INKBIRD Bluetooth Meat Thermometer",
+      price: "₹2,090 / $25.18",
+      url: "https://amzn.to/3TjlTvu",
+      image: "https://m.media-amazon.com/images/I/71UtnkqnYCL._SL1500_.jpg",
+      page: "products.html#inkbird-thermometer"
+    },
     {
+      id: "bbqgo-gloves",
+      name: "BBQGO BBQ Grill Gloves",
+      price: "₹1,292 / $15.57",
+      url: "https://amzn.to/3ZTGlXp",
+      image: "https://m.media-amazon.com/images/I/61vMY+WRAZL._SL1500_.jpg",
+      page: "products.html#bbqgo-gloves"
+    },
+    {
+      id: "breakfast-maker",
+      name: "Electric Breakfast Sandwich Maker",
+      price: "₹5,699 / $68.66",
+      url: "https://amzn.to/3TRB1Ae",
+      image: "https://m.media-amazon.com/images/I/61LUXbVnxjL._SL1500_.jpg",
+      page: "products.html#breakfast-maker"
+    },
+    {
+      id: "mini-chopper",
+      name: "Mini Food Chopper",
+      price: "₹3,700 / $44.58",
+      url: "https://amzn.to/3ZXneM8",
+      image: "https://m.media-amazon.com/images/I/61UmnOTKVFL._SL1080_.jpg",
+      page: "products.html#mini-chopper"
+    },
+    {
+      id: "smart-scale",
+      name: "Smart Measuring Spoon/Scale",
+      price: "₹1,199 / $14.45",
+      url: "https://amzn.to/4l6Z1eD",
+      image: "https://m.media-amazon.com/images/I/71yo8PyCRwL._SL1500_.jpg",
+      page: "products.html#smart-scale"
+    },
+    {
+      id: "auto-stirrer",
+      name: "Automatic Stirring Pot Tool",
+      price: "₹13,475.98 / $162.36",
+      url: "https://amzn.to/4kljH1o",
+      image: "https://m.media-amazon.com/images/I/61YUQzBHRpL._SL1500_.jpg",
+      page: "products.html#auto-stirrer"
+    },
+    {
+      id: "spice-rack",
+      name: "Magnetic Spice Rack Organizer",
+      price: "₹2,299 / $27.70",
+      url: "https://amzn.to/40xGaBh",
+      image: "https://m.media-amazon.com/images/I/71ILXxzPrnL._SL1500_.jpg",
+      page: "products.html#spice-rack"
+    },
+    {
+      id: "veg-slicer",
+      name: "Multi-Function Vegetable Slicer",
+      price: "₹3,499 / $42.16",
+      url: "https://amzn.to/40y9ebL",
+      image: "https://m.media-amazon.com/images/I/714KMq8ALwL._SL1500_.jpg",
+      page: "products.html#veg-slicer"
+    },
+    {
+      id: "cabinet-light",
+      name: "Under Cabinet Lighting (Rechargeable)",
+      price: "₹699 / $8.42",
+      url: "https://amzn.to/3I92T05",
+      image: "https://m.media-amazon.com/images/I/71XvKLC3GgL._SL1500_.jpg",
+      page: "products.html#cabinet-light"
+    },
+    {
+      id: "silicone-bags",
+      name: "Reusable Silicone Zip Bags",
+      price: "₹700 / $8.43",
+      url: "https://amzn.to/4keOzR1",
+      image: "https://m.media-amazon.com/images/I/81ioPY352VL._SL1500_.jpg",
+      page: "products.html#silicone-bags"
+    },
+    {
+      id: "tap-filter",
+      name: "Smart Tap Water Filter Dispenser",
+      price: "₹299 / $3.60",
+      url: "https://amzn.to/4etDQBd",
+      image: "https://m.media-amazon.com/images/I/51vG9anK5GL.jpg",
+      page: "products.html#tap-filter"
+    },
+    {
+      id: "philips-air-fryer",
+      name: "Philips Air Fryer",
+      price: "Up to ₹10,000 / $119",
+      url: "https://amzn.to/4kgzH4R",
+      image: "https://m.media-amazon.com/images/I/414ly0wsjYL._SL1000_.jpg",
+      page: "products.html#philips-air-fryer"
+    },
+    {
+      id: "sliding-tray",
+      name: "Sliding Tray",
+      price: "Under ₹1,000 / $11.99",
+      url: "https://amzn.to/3SS1XQ4",
+      image: "https://m.media-amazon.com/images/I/61rUIJtyEkL._UF1000,1000_QL80_FMwebp_.jpg",
+      page: "products.html#sliding-tray"
+    },
+    {
+      id: "vaccum-sealer",
+      name: "Vacuum Sealer",
+      price: "Up to ₹3,000 / $35.99",
+      url: "https://amzn.to/3SVcs54",
+      image: "https://m.media-amazon.com/images/I/71QkgEBOZiL._UF894,1000_QL80_FMwebp_.jpg",
+      page: "products.html#vaccum-sealer"
+    },
+    {
+      id: "mini-sealing-machine",
+      name: "Mini Sealing Machine",
+      price: "Under ₹500 / $3.59",
+      url: "https://amzn.to/4k1PTqE",
+      image: "https://m.media-amazon.com/images/I/71utCY3f-JL._UF894,1000_QL80_FMwebp_.jpg",
+      page: "products.html#mini-sealing-machine"
+    },
+    {
+      id: "kitchen-mat",
+      name: "Kitchen Mat",
+      price: "Up to ₹1,000 / $8.39",
+      url: "https://amzn.to/3HG0ry2",
+      image: "https://m.media-amazon.com/images/I/619hMFvYSoL._UF894,1000_QL80_FMwebp_.jpg",
+      page: "products.html#kitchen-mat"
+    },
+    {
+      id: "knife-sharpener",
+      name: "Knife Sharpener",
+      price: "Under ₹500 / $2.99",
+      url: "https://amzn.to/45TExRW",
+      image: "https://m.media-amazon.com/images/I/610WnGc6kPL._UF894,1000_QL80_FMwebp_.jpg",
+      page: "products.html#knife-sharpener"
+    },
+    {
+      id: "breakfast-station",
+      name: "3-in-1 Breakfast Maker",
+      price: "Up to ₹8,000 / $95.99",
+      url: "https://amzn.to/45K1VkQ",
+      image: "https://m.media-amazon.com/images/I/619zlfuWKgL._SL1001_.jpg",
+      page: "products.html#breakfast-station"
+    },
+    {
+      id: "multi-cooker",
+      name: "Prestige Multi-Cooker 1.5L",
+      price: "Under ₹2,500 / $29.99",
+      url: "https://amzn.to/4kll3ZT",
+      image: "https://m.media-amazon.com/images/I/71OHF3Zl0bL._SL1500_.jpg",
+      page: "products.html#multi-cooker"
+    },
+    {
+      id: "atomberg-mixer",
+      name: "Atomberg Zenova Mixer Grinder",
+      price: "Up to ₹7,000 / $84.99",
+      url: "https://amzn.to/4ex7lCf",
+      image: "https://m.media-amazon.com/images/I/81haDHz+llL._SL1500_.jpg",
+      page: "products.html#atomberg-mixer"
+    }{
       id: "collapsible-electric-kettle",
       name: "Collapsible Electric Kettle",
       description: "Space-saving collapsible kettle with auto shut-off and boil-dry protection",
@@ -93,3 +658,4 @@ const pintrendData = {
 };
 
 export default pintrendData;
+
