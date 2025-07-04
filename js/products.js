@@ -1,66 +1,47 @@
-// js/products.js
+// products.js
+// Responsible for displaying product data and interactions
 
-import pintrendData from '../data.js';
+import pintrendData from './data.js';
 
-// Display featured or all products
-export function displayFeaturedProducts(containerId = 'featuredProducts') {
+// Display products in a given container by ID
+export function displayFeaturedProducts(containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  const products = pintrendData.products;
-
-  container.innerHTML = products.map(product => `
+  container.innerHTML = pintrendData.products.map(product => `
     <div class="product-card">
       <a href="product-detail.html?id=${product.id}">
-        <img src="${product.image}" alt="${product.name}" loading="lazy">
-      </a>
-      <div class="product-info">
+        <img src="${product.image}" alt="${product.name}" class="product-img" loading="lazy">
         <h3>${product.name}</h3>
-        <p>₹${product.price.inr}</p>
+        <p class="price">₹${product.price.inr}</p>
+        <p class="category">${product.category}</p>
         <button class="add-to-cart" data-product-id="${product.id}" ${product.stock === 0 ? 'disabled' : ''}>
           ${product.stock === 0 ? 'Out of Stock' : 'Add to Cart'}
         </button>
-      </div>
+      </a>
     </div>
   `).join('');
-
-  // Enable Add to Cart functionality
-  container.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', () => {
-      const productId = button.dataset.productId;
-      const product = pintrendData.getProductById(productId);
-      if (product) {
-        pintrendData.addToCart(productId);
-        alert(`${product.name} added to cart!`);
-      }
-    });
-  });
 }
 
-// Placeholder for category display if needed on homepage
-export function displayCategories(containerId = 'categoryGrid') {
+// Display categories (based on existing products)
+export function displayCategories(containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
   const categories = [...new Set(pintrendData.products.map(p => p.category))];
 
-  container.innerHTML = categories.map(cat => `
+  container.innerHTML = categories.map(category => `
     <div class="category-card">
-      <h3>${cat}</h3>
+      <h3>${category}</h3>
+      <a href="products.html" class="btn">Explore</a>
     </div>
   `).join('');
 }
 
-// For product detail page
-export function getProductById(id) {
-  return pintrendData.getProductById(id);
-}
-
-export function addToCart(id) {
-  return pintrendData.addToCart(id);
-}
-
-export function updateCartCount() {
-  const totalItems = pintrendData.getCartItems().reduce((sum, item) => sum + (item.quantity || 1), 0);
-  document.querySelectorAll('#cart-count').forEach(el => el.textContent = totalItems);
-}
+// Export utility methods from data.js
+export const getProductById = pintrendData.getProductById.bind(pintrendData);
+export const addToCart = pintrendData.addToCart.bind(pintrendData);
+export const updateCartCount = () => {
+  const count = pintrendData.getCartItems().reduce((sum, item) => sum + (item.quantity || 1), 0);
+  document.querySelectorAll('#cart-count').forEach(el => el.textContent = count);
+};
