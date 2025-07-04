@@ -1,0 +1,107 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Welcome to PINSTREND, your smart e-commerce destination for kitchen gadgets and summer collection 2025.">
+  <title>Home | PINSTREND - Smart Kitchen Collection</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">PINSTREND</a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="products.html">Products</a>
+        <a href="#">Categories</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="nav-icons">
+        <a href="#" class="search-icon" aria-label="Search"><i class="fas fa-search"></i></a>
+        <a href="#" class="user-icon" aria-label="User"><i class="fas fa-user"></i></a>
+        <a href="cart.html" class="cart-icon" aria-label="Cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cart-count">0</span>
+        </a>
+      </div>
+      <button class="hamburger" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Summer Collection 2025</h1>
+        <p>Discover our premium gadgets with exclusive deals</p>
+        <a href="products.html" class="btn">Shop Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories">
+    <div class="container">
+      <h2>Shop by Category</h2>
+      <div class="category-grid" id="categoryGrid"></div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="featured-products">
+    <div class="container">
+      <h2>Featured Products</h2>
+      <div class="product-grid" id="featuredProducts"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>PINSTREND</h3>
+          <p>Smart kitchen gadgets for every home.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <p>Email: info@pinstrend.com</p>
+          <p>Phone: +1 (123) 456-7890</p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© 2025 PINSTREND. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module">
+    import { displayFeaturedProducts, updateCartCount, displayCategories } from './js/products.js';
+    import { setupSearch, setupHamburger } from './js/main.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      displayFeaturedProducts('featuredProducts');
+      displayCategories('categoryGrid');
+      updateCartCount();
+      setupSearch();
+      setupHamburger();
+    });
+  </script>
+</body>
+</html>
