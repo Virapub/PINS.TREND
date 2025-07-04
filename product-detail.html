@@ -86,55 +86,54 @@
 
   
   <script type="module">
-    import { getProductById, addToCart, updateCartCount } from './js/products.js';
-    import { setupSearch, setupHamburger } from './js/main.js';
+  import { getProductById, addToCart, updateCartCount } from './js/products.js';
+  import { setupSearch, setupHamburger } from './js/main.js';
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('id');
+  const urlParams = new URLSearchParams(window.location.search);
+  const productId = urlParams.get('id');
 
-    function loadProductDetail() {
-      const productDetail = document.getElementById('productDetail');
-      const product = getProductById(productId);
+  function loadProductDetail() {
+    const productDetail = document.getElementById('productDetail');
+    const product = getProductById(productId);
 
-      if (product) {
-        productDetail.innerHTML = `
-          <div class="product-card">
-            <img src="${product.image}" alt="${product.title}" class="product-img" loading="lazy">
-            <div class="product-details">
-              <h2>${product.title}</h2>
-              <p class="price">INR ${product.priceINR} / USD $${product.price.toFixed(2)}</p>
-              <p class="original-price">Original: $${product.originalPrice.toFixed(2)}</p>
-              <p class="rating">⭐ ${product.rating} (N/A reviews)</p>
-              <p class="description">${product.description}</p>
-              <p class="stock">Stock: ${product.stock} available</p>
-              <button class="add-to-cart" data-product-id="${product.id}" ${product.stock === 0 ? 'disabled' : ''}>
-                ${product.stock === 0 ? 'Out of Stock' : 'Add to Cart'}
-              </button>
-            </div>
+    if (product) {
+      productDetail.innerHTML = `
+        <div class="product-card">
+          <img src="${product.image}" alt="${product.name}" class="product-img" loading="lazy">
+          <div class="product-details">
+            <h2>${product.name}</h2>
+            <p class="price">INR ₹${product.price.inr} / USD $${product.price.usd}</p>
+            <p class="rating">⭐ ${product.rating}</p>
+            <p class="description">${product.description}</p>
+            <p class="stock">Stock: ${product.stock} available</p>
+            <button class="add-to-cart" data-product-id="${product.id}" ${product.stock === 0 ? 'disabled' : ''}>
+              ${product.stock === 0 ? 'Out of Stock' : 'Add to Cart'}
+            </button>
           </div>
-        `;
-      } else {
-        productDetail.innerHTML = `<p>Product not found!</p>`;
-      }
-
-      const addToCartBtn = document.querySelector('.add-to-cart');
-      if (addToCartBtn && !addToCartBtn.disabled) {
-        addToCartBtn.addEventListener('click', () => {
-          addToCart(productId);
-          loadProductDetail(); // Update stock display
-          updateCartCount();
-          alert(`${product.title} added to cart!`);
-        });
-      }
+        </div>
+      `;
+    } else {
+      productDetail.innerHTML = `<p>Product not found!</p>`;
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      loadProductDetail();
-      updateCartCount();
-      setupSearch();
-      setupHamburger();
-    });
-  </script>
+    const addToCartBtn = document.querySelector('.add-to-cart');
+    if (addToCartBtn && !addToCartBtn.disabled) {
+      addToCartBtn.addEventListener('click', () => {
+        addToCart(productId);
+        loadProductDetail(); // stock update
+        updateCartCount();
+        alert(`${product.name} added to cart!`);
+      });
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadProductDetail();
+    updateCartCount();
+    setupSearch();
+    setupHamburger();
+  });
+</script>
 
 </body>
 </html>
