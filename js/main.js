@@ -1,105 +1,89 @@
-// main.js
-// Central JavaScript file for PINSTREND website functionality
-
+// js/main.js
 import pintrendData from './data.js';
 
-// Update cart count in header
+// ✅ Update Cart Count
 export function updateCartCount() {
-    const cartCountElements = document.querySelectorAll('#cart-count');
-    const totalItems = pintrendData.getCartItems().reduce((sum, item) => sum + (item.quantity || 1), 0);
-    cartCountElements.forEach(el => el.textContent = totalItems);
+  const cartCountElements = document.querySelectorAll('#cart-count');
+  const totalItems = pintrendData.getCartItems().reduce((sum, item) => sum + (item.quantity || 1), 0);
+  cartCountElements.forEach(el => el.textContent = totalItems);
 }
 
-// Setup search functionality
+// ✅ Search Functionality
 export function setupSearch() {
-    const searchIcon = document.querySelector('.search-icon');
+  const searchIcon = document.querySelector('.search-icon');
+  const searchInput = document.createElement('input');
+  searchInput.className = 'search-input';
+  searchInput.placeholder = 'Search products...';
 
-    const searchInput = document.createElement('input');
-    searchInput.className = 'search-input';
-    searchInput.placeholder = 'Search products...';
+  let resultsContainer;
 
-    let resultsContainer;
-
-    searchIcon.addEventListener('click', () => {
-        if (!document.querySelector('.search-input')) {
-            searchIcon.parentElement.appendChild(searchInput);
-            searchInput.focus();
-        } else {
-            searchInput.remove();
-            if (resultsContainer) resultsContainer.remove();
-        }
-    });
-
-    searchInput.addEventListener('input', (e) => {
-        const searchTerm = e.target.value.toLowerCase();
-
-        if (resultsContainer) resultsContainer.remove();
-
-        if (searchTerm.length < 3) return;
-
-        const results = pintrendData.searchProducts(searchTerm);
-        resultsContainer = document.createElement('div');
-        resultsContainer.className = 'search-results';
-
-        if (results.length === 0) {
-            resultsContainer.innerHTML = `<p>No results found.</p>`;
-        } else {
-            resultsContainer.innerHTML = results.map(product => `
-                <a href="product-detail.html?id=${product.id}" class="search-result">
-                    <img src="${product.image}" alt="${product.name}" class="search-result-img">
-                    <div class="search-result-info">
-                        <h4>${product.name}</h4>
-                        <p>₹${product.price.inr} • ${product.category}</p>
-                    </div>
-                </a>
-            `).join('');
-        }
-
-        document.body.appendChild(resultsContainer);
-    });
-
-    // Close search if click outside
-    document.addEventListener('click', (e) => {
-        if (!searchIcon.contains(e.target) && !searchInput.contains(e.target)) {
-            if (searchInput) searchInput.remove();
-            if (resultsContainer) resultsContainer.remove();
-        }
-    });
-}
-
-// Setup mobile hamburger menu
-export function setupHamburger() {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+  searchIcon.addEventListener('click', () => {
+    if (!document.querySelector('.search-input')) {
+      searchIcon.parentElement.appendChild(searchInput);
+      searchInput.focus();
+    } else {
+      searchInput.remove();
+      if (resultsContainer) resultsContainer.remove();
     }
+  });
+
+  searchInput.addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    if (resultsContainer) resultsContainer.remove();
+    if (searchTerm.length < 2) return;
+
+    const results = pintrendData.searchProducts(searchTerm);
+    resultsContainer = document.createElement('div');
+    resultsContainer.className = 'search-results';
+
+    if (results.length === 0) {
+      resultsContainer.innerHTML = `<p>No results found.</p>`;
+    } else {
+      resultsContainer.innerHTML = results.map(product => `
+        <a href="product-detail.html?id=${product.id}" class="search-result">
+          <img src="${product.image}" alt="${product.name}" />
+          <div>
+            <h4>${product.name}</h4>
+            <p>₹${product.price.inr} • ${product.category}</p>
+          </div>
+        </a>
+      `).join('');
+    }
+
+    document.body.appendChild(resultsContainer);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!searchIcon.contains(e.target) && !searchInput.contains(e.target)) {
+      if (searchInput) searchInput.remove();
+      if (resultsContainer) resultsContainer.remove();
+    }
+  });
 }
 
-// Setup global Add to Cart buttons (in any loaded section)
-function setupAddToCartButtons() {
-    document.querySelectorAll('.add-to-cart').forEach(button => {
-        if (!button.disabled) {
-            button.addEventListener('click', () => {
-                const productId = button.dataset.productId;
-                const product = pintrendData.getProductById(productId);
-                if (!product) return;
-
-                pintrendData.addToCart(productId);
-                updateCartCount();
-                alert(`${product.name} added to cart!`);
-            });
-        }
+// ✅ Hamburger for mobile
+export function setupHamburger() {
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
     });
+  }
 }
 
-// Init everything on DOM load
-document.addEventListener('DOMContentLoaded', () => {
-    updateCartCount();
-    setupSearch();
-    setupHamburger();
-    setupAddToCartButtons();
-});
+// ✅ Setup Add to Cart buttons (used in product-detail page if needed)
+export function setupAddToCartButtons() {
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    if (!button.disabled) {
+      button.addEventListener('click', () => {
+        const productId = button.dataset.productId;
+        const product = pintrendData.getProductById(productId);
+        if (!product) return;
+        pintrendData.addToCart(productId);
+        updateCartCount();
+        alert(`${product.name} added to cart!`);
+      });
+    }
+  });
+}
