@@ -45,7 +45,46 @@ const pintrendData = {
       rating: 4.3,
       features: ["Strong magnets", "Adjustable width", "Easy to clean"],
       stock: 40
-    }
+    },
+    {
+    id: "fridge-organizer-bins",
+    name: "Fridge Organizer Bins (Clear, Stackable)",
+    description: "Set of clear plastic bins for better fridge organization",
+    price: { inr: 2395, usd: 27.97 },
+    image: "https://m.media-amazon.com/images/I/71S+IrhvQPL._SL1500_.jpg",
+    link: "https://amzn.to/3I98vaY",
+    page: "products.html#fridge-organizer-bins",
+    category: "Storage",
+    rating: 4.6,
+    features: ["Stackable design", "See-through material", "Easy-grip handles"],
+    stock: 50
+  },
+  {
+    id: "smart-trash-can",
+    name: "Smart Trash Can with Motion Sensor",
+    description: "Automatic opening trash can with touch-free operation",
+    price: { inr: 2999, usd: 35.03 },
+    image: "https://m.media-amazon.com/images/I/615kYHdRG0L._SL1500_.jpg",
+    link: "https://amzn.to/4euARZe",
+    page: "products.html#smart-trash-can",
+    category: "Smart Gadgets",
+    rating: 4.4,
+    features: ["Motion sensor", "Battery operated", "Odor control"],
+    stock: 40
+  },
+  {
+    id: "electric-jar-opener",
+    name: "Electric Jar Opener",
+    description: "Battery-powered device that opens tight jar lids effortlessly",
+    price: { inr: 1571, usd: 18.35 },
+    image: "https://m.media-amazon.com/images/I/71XbxJC8QLL._SL1500_.jpg",
+    link: "https://amzn.to/44sVwbo",
+    page: "products.html#electric-jar-opener",
+    category: "Helpers",
+    rating: 4.1,
+    features: ["One-touch operation", "Non-slip grip", "Works on most jars"],
+    stock: 50
+  }
   ],
 
   // Method: Get cart items
